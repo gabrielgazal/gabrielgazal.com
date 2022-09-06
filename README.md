@@ -1,8 +1,8 @@
 ### Hi there 👋
 
-<!--
-**gabrielgazal/gabrielgazal** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**gabrielgazal/gabrielgazal** is a ✨ _special_ ✨ repository because its my personal page!
 
+<!--
 Here are some ideas to get you started:
 
 - 🔭 I’m currently working on ...
