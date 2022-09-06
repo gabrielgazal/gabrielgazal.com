@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-**gabrielgazal/gabrielgazal** is a ✨ _special_ ✨ repository because its my personal page!
+**gabrielgazal/gabrielgazal.com** is a ✨ _special_ ✨ repository because its my personal page!
 
 <!--
 Here are some ideas to get you started:
