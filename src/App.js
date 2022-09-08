@@ -5,19 +5,35 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>
+          Gabriel Gazal
+        </h1>
+        <h2>
+          Site under construction
+        </h2>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          iOS Software Engineer
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.github.com/gabrielgazal"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          GitHub
+        </a>
+        <a
+          className="App-link"
+          href="https://linkedin.com/in/gabrielgazal"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
         </a>
       </header>
+      <body>
+        Testing
+      </body>
     </div>
   );
 }
