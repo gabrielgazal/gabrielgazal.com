@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <img src="logo512.png" alt="Logo" width="150" height="150"></img>
+
         <h1>
           Gabriel Gazal
         </h1>
@@ -31,9 +32,9 @@ function App() {
           LinkedIn
         </a>
       </header>
-      <body>
+      {/* <body>
         Testing
-      </body>
+      </body> */}
     </div>
   );
 }
