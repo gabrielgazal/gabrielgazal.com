@@ -1,45 +1,79 @@
-.nav {
-    background: #08070b;
-    /* cor de fundo da navbar */
-    padding: 10px 20px;
-}
-
-.navList {
+.navbar {
     display: flex;
-    gap: 16px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 0;
+    background-color: #08070b;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .navItem {
     position: relative;
-    padding: 8px 12px;
-    border-radius: 12px;
-    /* cantos arredondados */
-    color: #ffffff;
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.navItem:hover {
-    background: rgba(255, 255, 255, 0.05);
-    /* hover clarinho */
-}
-
-.navItem.active {
+/* Retângulo de hover para todos os itens */
+.navItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(255, 255, 255, 0.1);
-    /* fundo do item ativo */
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    /* atrás do texto */
 }
 
-.navbar {
-    display: flex;
-    gap: 16px;
-    background-color: #08070b;
-    padding: 10px 20px;
+.navItem:hover::before {
+    opacity: 1;
+}
 
-    justify-content: center;
-    /* centraliza horizontalmente */
-    align-items: center;
-    /* centraliza verticalmente */
+/* Texto muda no hover */
+.navItem:hover {
+    color: #ffffff;
+    z-index: 1;
+    /* garante que o texto fique acima do retângulo */
+}
+
+/* Barra inferior somente para o item ativo */
+.navItem.active::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    /* barra branca */
+    border-radius: 1px;
+    z-index: 2;
+    /* acima do retângulo hover */
+}
+
+/* Barrinha vermelha para itens não ativos */
+.navItem:not(.active)::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 1px;
+    z-index: 2;
 }
