@@ -15,7 +15,7 @@ export async function getStaticProps() {
     props: {
       title: 'Gabriel Gazal',
       description: 'Obsessed with developer experience',
-      image: '/static/images/home-bw.jpg',
+      image: '/images/avatar.jpg',
     },
   }
 }
