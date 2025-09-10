@@ -8,6 +8,7 @@ export default function NavBar() {
   const [hovered, setHovered] = useState('');
 
   const navItems = [
+    { name: "G", href: "/" }, // Transformamos o botão G em navItem
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
     { name: "Uses", href: "/uses" }
@@ -23,7 +24,7 @@ export default function NavBar() {
           <Link
             key={item.href}
             href={item.href}
-            className={`${styles.navItem} ${isActive ? styles.active : ""}`}
+            className={`${item.name === "G" ? styles.navLogo : styles.navItem} ${isActive ? styles.active : ""}`}
             onMouseEnter={() => setHovered(item.name)}
             onMouseLeave={() => setHovered('')}
           >

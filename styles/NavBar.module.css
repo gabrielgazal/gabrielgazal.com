@@ -5,6 +5,7 @@
     padding: 10px 20px;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .navItem {
@@ -21,7 +22,6 @@
     transition: color 0.3s ease;
 }
 
-/* Retângulo de hover para todos os itens */
 .navItem::before {
     content: '';
     position: absolute;
@@ -29,26 +29,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;
-    /* atrás do texto */
 }
 
 .navItem:hover::before {
     opacity: 1;
 }
 
-/* Texto muda no hover */
 .navItem:hover {
     color: #ffffff;
     z-index: 1;
-    /* garante que o texto fique acima do retângulo */
 }
 
-/* Barra inferior somente para o item ativo */
 .navItem.active::after {
     content: '';
     position: absolute;
@@ -58,14 +54,69 @@
     width: 20px;
     height: 2px;
     background: #ffffff;
-    /* barra branca */
     border-radius: 1px;
     z-index: 2;
-    /* acima do retângulo hover */
 }
 
-/* Barrinha vermelha para itens não ativos */
 .navItem:not(.active)::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 1px;
+    z-index: 2;
+}
+
+.navLogo {
+    position: relative;
+    /* importantíssimo para ::before */
+    display: inline-block;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    /* mesma cor dos navItems */
+    text-decoration: none !important;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease;
+    z-index: 1;
+    /* texto acima do retângulo */
+}
+
+/* Retângulo de hover para navLogo */
+.navLogo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    /* atrás do texto */
+}
+
+.navLogo:hover::before {
+    opacity: 1;
+}
+
+.navLogo:hover {
+    color: #ffffff;
+    z-index: 2;
+    /* garante que o texto fique acima do retângulo */
+}
+
+/* Barra inferior do botão G (sempre sumida) */
+.navLogo::after {
     content: '';
     position: absolute;
     bottom: 8px;
