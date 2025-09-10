@@ -8,7 +8,7 @@ export default function NavBar() {
   const [hovered, setHovered] = useState('');
 
   const navItems = [
-    { name: "G", href: "/" }, // Transformamos o botão G em navItem
+    { name: "G", href: "/" }, // botão G
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
     { name: "Uses", href: "/uses" }
@@ -16,25 +16,37 @@ export default function NavBar() {
 
   return (
     <nav className={styles.navbar}>
-      {navItems.map((item) => {
-        const isActive = router.pathname === item.href;
-        const isHovered = hovered === item.name;
+      {/* Botão G */}
+      <Link
+        href="/"
+        className={`${styles.navLogo} ${router.pathname === '/' ? styles.active : ""}`}
+        onMouseEnter={() => setHovered('G')}
+        onMouseLeave={() => setHovered('')}
+      >
+        {hovered === 'G' && <span className={styles.navHovered}></span>}
+        G
+      </Link>
 
-        return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`${item.name === "G" ? styles.navLogo : styles.navItem} ${isActive ? styles.active : ""}`}
-            onMouseEnter={() => setHovered(item.name)}
-            onMouseLeave={() => setHovered('')}
-          >
-            {isHovered && (
-              <span className={styles.navHovered}></span>
-            )}
-            {item.name}
-          </Link>
-        );
-      })}
+      {/* Itens centrais */}
+      <div className={styles.navItemsWrapper}>
+        {navItems.filter(item => item.name !== "G").map((item) => {
+          const isActive = router.pathname === item.href;
+          const isHovered = hovered === item.name;
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`${styles.navItem} ${isActive ? styles.active : ""}`}
+              onMouseEnter={() => setHovered(item.name)}
+              onMouseLeave={() => setHovered('')}
+            >
+              {isHovered && <span className={styles.navHovered}></span>}
+              {item.name}
+            </Link>
+          );
+        })}
+      </div>
     </nav>
   );
 }

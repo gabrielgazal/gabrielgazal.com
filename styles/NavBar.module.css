@@ -11,7 +11,7 @@
 .navItem {
     position: relative;
     display: inline-block;
-    padding: 20px;
+    padding: 16px;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none !important;
     text-transform: uppercase;
@@ -75,21 +75,19 @@
     position: relative;
     /* importantíssimo para ::before */
     display: inline-block;
-    padding: 20px;
+    padding: 16px;
     font-size: 20px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.7);
-    /* mesma cor dos navItems */
     text-decoration: none !important;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     transition: color 0.3s ease;
     z-index: 1;
-    /* texto acima do retângulo */
+    margin-right: auto;
 }
 
-/* Retângulo de hover para navLogo */
 .navLogo::before {
     content: '';
     position: absolute;
@@ -102,7 +100,6 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;
-    /* atrás do texto */
 }
 
 .navLogo:hover::before {
@@ -112,10 +109,8 @@
 .navLogo:hover {
     color: #ffffff;
     z-index: 2;
-    /* garante que o texto fique acima do retângulo */
 }
 
-/* Barra inferior do botão G (sempre sumida) */
 .navLogo::after {
     content: '';
     position: absolute;
@@ -127,4 +122,11 @@
     background: rgba(255, 255, 255, 0);
     border-radius: 1px;
     z-index: 2;
+}
+
+.navItemsWrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex: 1;
 }

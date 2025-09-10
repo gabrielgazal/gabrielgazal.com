@@ -53,8 +53,8 @@ export default function About({ title, description, image }) {
                         <Image
                             alt="Gabriel Gazal"
                             src={image}
-                            width={300}
-                            height={400}
+                            width={450}
+                            height={600}
                             style={{ borderRadius: '12px', objectFit: 'cover' }}
                             priority
                         />
