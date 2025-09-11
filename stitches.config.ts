@@ -1,15 +1,215 @@
-import { createStitches } from '@stitches/react';
+import { createStitches } from '@stitches/react'
 
-export const { styled, css, theme, globalCss } = createStitches({
-  theme: { colors: { text: '#fff' } }
-});
+export const {
+  styled,
+  css,
+  globalCss,
+  keyframes,
+  getCssText,
+  theme,
+  createTheme,
+  config,
+} = createStitches({
+  theme: {
+    colors: {
+      yellow: '#ffff80',
+      pink: '#ff80bf',
+      purple: '#9580ff',
+      red: '#ff9580',
+      orange: '#ffca80',
+      green: '#8aff80',
+      cyan: '#80ffea',
+      primary: '#f2f2f2',
+      secondary: '#8f9ba8',
+      background: '#08070b',
+      hover: '#212024',
+      command: 'rgba(255, 255, 255, 0.05)',
+    },
+    fonts: {
+      body: 'Biotif, sans-serif',
+      code: 'Fira Code, monospace',
+      heading: 'Neuzeit Grotesk Bold, sans-serif',
+    },
+    space: {
+      navHeightDesktop: '60px',
+      navHeightMobile: '110px',
+      gutter: '20px', // novo espaçamento padrão
+      section: '80px', // padding vertical padrão para seções
+    },
+    fontSizes: {
+      small: '12px',
+      base: '15px',
+      medium: '18px',
+      large: '24px',
+      xlarge: '48px',
+    },
+    lineHeights: {
+      short: 1.2,
+      normal: 1.5,
+      tall: 1.8,
+    },
+    transitions: {
+      duration: '0.2s',
+      ease: 'ease-in-out',
+    },
+    radii: {
+      borderRadius: '8px',
+      circle: '50%',
+    },
+    shadows: {
+      sm: '0 1px 2px rgba(0,0,0,0.05)',
+      md: '0 4px 6px rgba(0,0,0,0.1)',
+      lg: '0 10px 15px rgba(0,0,0,0.15)',
+    },
+    zIndices: {
+      dropdown: 1000,
+      modal: 2000,
+      tooltip: 3000,
+    },
+  },
+  media: {
+    bp1: '(min-width: 425px)',
+    bp2: '(min-width: 760px)',
+    bp3: '(max-width: 780px)',
+    bp4: '(max-width: 1024px)',
+    motion: '(prefers-reduced-motion: reduce)', // suporte a usuários que pedem menos animação
+    hover: '(hover: hover)', // detecta dispositivos que suportam hover
+  },
+  utils: {
+    m: (value) => ({ margin: value }),
+    mt: (value) => ({ marginTop: value }),
+    mr: (value) => ({ marginRight: value }),
+    mb: (value) => ({ marginBottom: value }),
+    ml: (value) => ({ marginLeft: value }),
+    mx: (value) => ({ marginLeft: value, marginRight: value }),
+    my: (value) => ({ marginTop: value, marginBottom: value }),
+    p: (value) => ({ padding: value }),
+    pt: (value) => ({ paddingTop: value }),
+    pr: (value) => ({ paddingRight: value }),
+    pb: (value) => ({ paddingBottom: value }),
+    pl: (value) => ({ paddingLeft: value }),
+    px: (value) => ({ paddingLeft: value, paddingRight: value }),
+    py: (value) => ({ paddingTop: value, paddingBottom: value }),
+    size: (value) => ({ width: value, height: value }),
+    bg: (value) => ({ background: value }),
+    linearGradient: (value) => ({ backgroundImage: `linear-gradient(${value})` }),
+  },
+})
 
 export const globalStyles = globalCss({
+  '*': {
+    fontFamily: '$body',
+    boxSizing: 'border-box',
+  },
+  'html, body': {
+    margin: 0,
+    padding: 0,
+    WebkitFontSmoothing: 'antialiased',
+    background: '$background',
+    color: '$primary',
+  },
+  kbd: {
+    color: '$background',
+    background: '$secondary',
+    padding: '1px 5px',
+    borderRadius: '$borderRadius',
+    transition: 'background $transitions.duration $transitions.ease',
+    fontFamily: '$code',
+    fontSize: '$fontSizes.small',
+  },
+  svg: {
+    width: '32px',
+    height: '32px',
+    fill: 'white',
+  },
+  figure: { margin: 0 },
+  code: {
+    background: '#151417',
+    borderRadius: '$borderRadius',
+    color: '$primary',
+    fontFamily: '$code',
+    fontSize: '$fontSizes.base',
+    padding: '2px 4px',
+  },
+  ':not(pre) > code': { padding: '4px' },
+  h1: {
+    fontFamily: '$heading',
+    fontSize: '$fontSizes.xlarge',
+    lineHeight: '$lineHeights.short',
+    margin: '0 0 20px',
+    color: '$primary',
+  },
+  h2: { color: '$primary', margin: '60px 0 0', fontSize: '$fontSizes.large' },
+  'h3, h3 a': { color: '$primary', fontSize: '$fontSizes.medium', margin: '20px 0 0' },
+  ul: { margin: 0, paddingLeft: '20px' },
+  img: { borderRadius: '$borderRadius', maxWidth: '100%', height: 'auto' },
+  p: { margin: '20px 0', color: '$secondary' },
+  strong: { color: '$primary', fontWeight: 500 },
+  blockquote: {
+    borderLeft: '4px solid $hover',
+    color: '$secondary',
+    fontStyle: 'italic',
+    margin: 0,
+    paddingLeft: '20px',
+  },
+  a: {
+    borderBottom: '.5px solid $secondary',
+    color: '$primary',
+    textDecoration: 'none',
+    transition: 'opacity $transitions.duration $transitions.ease-in-out',
+  },
+  'a:hover, a:focus': {
+    opacity: 0.8,
+  },
+  '@font-face': [
+    {
+      fontFamily: 'Neuzeit Grotesk Bold',
+      src: `url("/static/font/NeuzeitGrotesk-Bold.woff2") format("woff2"),
+        url("/static/font/NeuzeitGrotesk-Bold.woff") format("woff")`,
+      fontWeight: 'normal',
+      fontStyle: 'normal',
+    },
+    {
+      fontFamily: 'Fira Code',
+      src: `url("/static/font/FiraCode-Regular.woff2") format("woff2"),
+        url("/static/font/FiraCode-Regular.woff") format("woff")`,
+      fontWeight: 'normal',
+      fontStyle: 'normal',
+    },
+    {
+      fontFamily: 'Biotif',
+      src: `url("/static/font/Biotif-Bold.woff2") format("woff2"),
+        url("/static/font/Biotif-Bold.woff") format("woff")`,
+      fontWeight: 'bold',
+      fontStyle: 'normal',
+    },
+    {
+      fontFamily: 'Biotif',
+      src: `url("/static/font/Biotif-Book.woff2") format("woff2"),
+        url("/static/font/Biotif-Book.woff") format("woff")`,
+      fontWeight: 500,
+      fontStyle: 'normal',
+    },
+    {
+      fontFamily: 'Biotif',
+      src: `url("/static/font/Biotif-Regular.woff2") format("woff2"),
+        url("/static/font/Biotif-Regular.woff") format("woff")`,
+      fontWeight: 'normal',
+      fontStyle: 'normal',
+    },
+    {
+      fontFamily: 'Biotif',
+      src: `url("/static/font/Biotif-RegularItalic.woff2") format("woff2"),
+        url("/static/font/Biotif-RegularItalic.woff") format("woff")`,
+      fontWeight: 'normal',
+      fontStyle: 'italic',
+    },
+  ],
   'a::after, a:hover::after': {
     content: '""',
     display: 'block',
     width: 0,
     height: 0,
     background: 'none',
-  }
-});
+  },
+})

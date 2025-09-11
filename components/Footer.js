@@ -4,7 +4,6 @@ import { styled } from '../stitches.config'
 export default function Footer() {
   const links = [
     { title: 'Email', url: '/contact', icon: 'ri-mail-line' },
-    { title: 'Twitter', url: 'https://twitter.com/gabrielgazal', icon: 'ri-twitter-line' },
     { title: 'GitHub', url: 'https://github.com/gabrielgazal', icon: 'ri-github-line' },
     { title: 'LinkedIn', url: 'https://linkedin.com/in/gabrielgazal', icon: 'ri-linkedin-line' },
     { title: 'Instagram', url: 'https://instagram.com/gabrielgazal', icon: 'ri-instagram-line' },
