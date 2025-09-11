@@ -4,7 +4,6 @@ import { PostMain, PostContent, PostContainer } from '../components/Post'
 import { Wrapper } from '../components/Wrapper'
 import { getPersonJsonLd } from '../lib/json-ld'
 
-// Client components
 import dynamic from 'next/dynamic'
 const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false })
 const Footer = dynamic(() => import('../components/Footer'), { ssr: false })

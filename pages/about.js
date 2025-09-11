@@ -12,7 +12,7 @@ const Footer = dynamic(() => import('../components/Footer'), { ssr: false })
 
 export async function getStaticProps() {
     const meta = {
-        title: 'About // Gabriel Gazal',
+        title: 'About',
         description:
             "Gabriel Gazal is an iOS developer obsessed with developer experience.",
         image: '/images/avatar.jpg',
@@ -54,7 +54,7 @@ export default function About({ title, description, image }) {
                             alt="Gabriel Gazal"
                             src={image}
                             width={450}
-                            height={600}
+                            height={500}
                             style={{ borderRadius: '12px', objectFit: 'cover' }}
                             priority
                         />
