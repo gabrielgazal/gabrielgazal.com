@@ -4,24 +4,21 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { parseISO, format, intervalToDuration } from 'date-fns'
 import items from '../data/about'
-
-// Navbar e Footer se você tiver
-import dynamic from 'next/dynamic'
-const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false })
-const Footer = dynamic(() => import('../components/Footer'), { ssr: false })
+import Base from '@/layouts/Base'
 
 export async function getStaticProps() {
     const meta = {
         title: 'About',
         description:
-            "Gabriel Gazal is an iOS developer obsessed with developer experience.",
-        image: '/images/avatar.jpg',
+            'Gabriel Gazal is an iOS developer obsessed with developer experience.',
+        tagline: 'Hey! This is me. ',
+        image: '/images/avatar.jpg'
     }
 
     return { props: meta }
 }
 
-export default function About({ title, description, image }) {
+function About({ title, description, image }) {
     const getDuration = (startDate, endDate) => {
         const durationObj = intervalToDuration({
             start: parseISO(startDate),
@@ -42,10 +39,11 @@ export default function About({ title, description, image }) {
                 <meta content={title} property="og:title" />
                 <meta content={description} name="description" />
                 <meta content={description} property="og:description" />
-                <meta content={`https://gabrielgazal.com${image}`} property="og:image" />
+                <meta
+                    content={`https://gabrielgazal.com${image}`}
+                    property="og:image"
+                />
             </Head>
-
-            <Navbar />
 
             <Main>
                 <IntroContainer>
@@ -53,8 +51,8 @@ export default function About({ title, description, image }) {
                         <Image
                             alt="Gabriel Gazal"
                             src={image}
-                            width={450}
-                            height={500}
+                            width={500}
+                            height={550}
                             style={{ borderRadius: '12px', objectFit: 'cover' }}
                             priority
                         />
@@ -65,39 +63,48 @@ export default function About({ title, description, image }) {
                             <strong>Hey, I'm Gabriel Gazal</strong>
                         </Paragraph>
                         <Paragraph>
-                            iOS developer passionate about developer experience and building apps that people love to use.
+                            iOS developer passionate about developer experience and building
+                            apps that people love to use.
                         </Paragraph>
                         <Paragraph>
-                            <strong>Currently:</strong> working on iOS projects and exploring new ways to improve app performance, usability, and accessibility.
+                            <strong>Currently:</strong> working on iOS projects and exploring
+                            new ways to improve app performance, usability, and accessibility.
                         </Paragraph>
                         <Paragraph>
-                            <strong>Outside of coding:</strong> I enjoy running, watching movies, and experimenting with side projects.
+                            <strong>Outside of coding:</strong> I enjoy running, watching
+                            movies, and experimenting with side projects.
                         </Paragraph>
                     </DescriptionWrapper>
                 </IntroContainer>
 
-                <h2>Career</h2>
+                <SectionTitle>Career</SectionTitle>
                 <CareerSection>
                     {items.map((item, index) => (
                         <CareerItem key={index}>
                             <h3>{item.jobTitle}</h3>
                             <p>
-                                <a href={item.companyUrl} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={item.companyUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     {item.company}
                                 </a>
                                 <span> • {item.location}</span>
                             </p>
                             <p>
                                 <span>{format(parseISO(item.startDate), 'LLL yyyy')}</span> –{' '}
-                                <span>{item.endDate ? format(parseISO(item.endDate), 'LLL yyyy') : 'Present'}</span> •{' '}
-                                <span>{getDuration(item.startDate, item.endDate)}</span>
+                                <span>
+                                    {item.endDate
+                                        ? format(parseISO(item.endDate), 'LLL yyyy')
+                                        : 'Present'}
+                                </span>{' '}
+                                • <span>{getDuration(item.startDate, item.endDate)}</span>
                             </p>
                         </CareerItem>
                     ))}
                 </CareerSection>
             </Main>
-
-            <Footer />
         </>
     )
 }
@@ -105,41 +112,75 @@ export default function About({ title, description, image }) {
 const Main = styled('main', {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
     margin: '0 auto',
     width: '100%',
-    maxWidth: 900,
+    maxWidth: '820px',
     padding: '40px 20px',
 })
 
 const IntroContainer = styled('div', {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: '30px',
-    flexWrap: 'wrap',
-    marginBottom: '60px',
+    display: 'grid',
+    gridTemplateColumns: '1.1fr 1.0fr',
+    alignItems: 'start',
+    gap: '32px',
+    marginBottom: '64px',
+    '@media (max-width: 768px)': {
+        gridTemplateColumns: '1fr',
+    },
 })
 
 const ImageWrapper = styled('div', {
-    flexShrink: 0,
+    width: '100%',
+    maxWidth: '400px',
+    justifySelf: 'center',
 })
 
 const DescriptionWrapper = styled('div', {
-    flex: 1,
-    minWidth: '250px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
 })
 
 const Paragraph = styled('p', {
-    margin: '10px 0',
-    lineHeight: 1.6,
+    margin: 0,
+    lineHeight: 1.7,
+    fontSize: '16px',
+    color: '$gray12',
+})
+
+const SectionTitle = styled('h2', {
+    fontSize: '2rem',
+    fontWeight: 600,
+    color: 'white',
+    lineHeight: 1,
 })
 
 const CareerSection = styled('section', {
     width: '100%',
-    marginTop: '20px',
+    marginTop: '0px',
 })
 
 const CareerItem = styled('div', {
     marginBottom: '40px',
+    '& h3': {
+        marginBottom: '4px',
+        fontSize: '18px',
+        fontWeight: '600',
+    },
+    '& p': {
+        margin: '4px 0',
+        lineHeight: 1.6,
+        fontSize: '15px',
+    },
+    '& a': {
+        color: '$primary',
+        textDecoration: 'none',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
+    },
 })
+
+About.Layout = Base
+
+export default About

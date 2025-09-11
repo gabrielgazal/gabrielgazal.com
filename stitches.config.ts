@@ -33,8 +33,8 @@ export const {
     space: {
       navHeightDesktop: '60px',
       navHeightMobile: '110px',
-      gutter: '20px', // novo espaçamento padrão
-      section: '80px', // padding vertical padrão para seções
+      gutter: '20px',
+      section: '80px',
     },
     fontSizes: {
       small: '12px',
@@ -72,8 +72,8 @@ export const {
     bp2: '(min-width: 760px)',
     bp3: '(max-width: 780px)',
     bp4: '(max-width: 1024px)',
-    motion: '(prefers-reduced-motion: reduce)', // suporte a usuários que pedem menos animação
-    hover: '(hover: hover)', // detecta dispositivos que suportam hover
+    motion: '(prefers-reduced-motion: reduce)',
+    hover: '(hover: hover)',
   },
   utils: {
     m: (value) => ({ margin: value }),

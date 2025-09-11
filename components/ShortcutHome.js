@@ -24,7 +24,7 @@ export default function ShortcutHome() {
   } else if (isMac) {
     return (
       <ButtonPrimary as="button" onClick={() => query?.toggle?.()}>
-        Press <kbd>⌘</kbd> + <kbd>R</kbd> to start →
+        Press <kbd>⌘</kbd> + <kbd>K</kbd> to start →
       </ButtonPrimary>
     )
   } else {
