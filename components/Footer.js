@@ -1,33 +1,28 @@
-'use client';
 import Link from 'next/link'
 import { styled } from '../stitches.config'
 
-const links = [
-  { title: 'Email', url: '/contact', icon: 'ri-mail-line' },
-  { title: 'Twitter', url: 'https://twitter.com/gabrielgazal', icon: 'ri-twitter-line' },
-  { title: 'GitHub', url: 'https://github.com/gabrielgazal', icon: 'ri-github-line' },
-  { title: 'LinkedIn', url: 'https://linkedin.com/in/gabrielgazal', icon: 'ri-linkedin-line' },
-  { title: 'Instagram', url: 'https://instagram.com/gabrielgazal', icon: 'ri-instagram-line' },
-]
-
 export default function Footer() {
+  const links = [
+    { title: 'Email', url: '/contact', icon: 'ri-mail-line' },
+    { title: 'Twitter', url: 'https://twitter.com/gabrielgazal', icon: 'ri-twitter-line' },
+    { title: 'GitHub', url: 'https://github.com/gabrielgazal', icon: 'ri-github-line' },
+    { title: 'LinkedIn', url: 'https://linkedin.com/in/gabrielgazal', icon: 'ri-linkedin-line' },
+    { title: 'Instagram', url: 'https://instagram.com/gabrielgazal', icon: 'ri-instagram-line' },
+  ]
+
   const renderAnchor = (link, index) => {
-    if (link.url.startsWith('http')) {
-      return (
-        <Anchor key={index} href={link.url} target="_blank" rel="noopener noreferrer">
-          <Title>{link.title}</Title>
-          <Icon className={link.icon} />
-        </Anchor>
-      )
-    }
+    const isExternal = link.url.startsWith('http')
+
+    const AnchorComponent = isExternal ? 'a' : Link
+    const props = isExternal
+      ? { href: link.url, target: '_blank', rel: 'noopener noreferrer' }
+      : { href: link.url }
 
     return (
-      <Link key={index} href={link.url} passHref>
-        <Anchor>
-          <Title>{link.title}</Title>
-          <Icon className={link.icon} />
-        </Anchor>
-      </Link>
+      <Anchor key={index} as={AnchorComponent} {...props}>
+        <Title>{link.title}</Title>
+        <Icon className={link.icon} />
+      </Anchor>
     )
   }
 
@@ -35,7 +30,7 @@ export default function Footer() {
 }
 
 const Container = styled('footer', {
-  background: '$background',
+  background: 'black',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -43,29 +38,37 @@ const Container = styled('footer', {
 })
 
 const Icon = styled('i', {
-  color: '$primary',
-  opacity: 1,
+  color: '#000000',
   marginLeft: '5px',
-  marginTop: '1px',
-  fontSize: '24px',
-  '@bp2': { opacity: 0, fontSize: '16px' },
+  fontSize: '16px',
+  transition: 'color 200ms ease-in-out, transform 200ms ease-in-out',
 })
 
 const Anchor = styled('a', {
-  color: '$secondary',
+  color: 'white',
   display: 'flex',
+  alignItems: 'center',
   fontSize: '15px',
-  border: 0,
   marginLeft: '20px',
-  textDecoration: 'none',
   textTransform: 'lowercase',
-  transition: 'color $duration ease-in-out',
-  '&:hover, &:focus': { color: '$primary', opacity: 1 },
-  [`&:hover ${Icon}`]: { transition: 'opacity $duration ease-in-out', opacity: 1 },
-  '&:first-child': { margin: '0' },
+  border: 0,
+  textDecoration: 'none',
+  transition: 'color 200ms ease-in-out',
+
+  '&:hover': {
+    color: '#ffffffff',
+  },
+
+  '&:hover i': {
+    color: '#ffffffff',
+    transform: 'scale(1.1)',
+  },
+
+  '&:first-child': {
+    margin: '0',
+  },
 })
 
 const Title = styled('span', {
-  display: 'none',
-  '@bp2': { display: 'block' },
+  display: 'block',
 })

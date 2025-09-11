@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'remixicon/fonts/remixicon.css';
 
 html,
 body {
@@ -287,4 +288,12 @@ footer {
   padding: 2rem;
   color: #555555;
   font-size: 0.9rem;
+}
+
+a,
+a:hover,
+a:visited,
+a:focus,
+a:active {
+  text-decoration: none !important;
 }

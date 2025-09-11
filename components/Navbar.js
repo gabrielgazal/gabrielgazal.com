@@ -8,7 +8,7 @@ export default function NavBar() {
   const [hovered, setHovered] = useState('');
 
   const navItems = [
-    { name: "G", href: "/" }, // botão G
+    { name: "G", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
     { name: "Uses", href: "/uses" }
@@ -16,7 +16,6 @@ export default function NavBar() {
 
   return (
     <nav className={styles.navbar}>
-      {/* Botão G */}
       <Link
         href="/"
         className={`${styles.navLogo} ${router.pathname === '/' ? styles.active : ""}`}
@@ -27,7 +26,6 @@ export default function NavBar() {
         G
       </Link>
 
-      {/* Itens centrais */}
       <div className={styles.navItemsWrapper}>
         {navItems.filter(item => item.name !== "G").map((item) => {
           const isActive = router.pathname === item.href;
