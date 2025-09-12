@@ -10,8 +10,8 @@ export async function getStaticProps() {
     const meta = {
         title: 'About | Gabriel Gazal',
         description:
-            'Gabriel Gazal is an iOS developer obsessed with developer experience.',
-        tagline: 'Hey! This is me. ',
+            'Gabriel Gazal is an iOS developer.',
+        tagline: 'A little bit from my world',
         image: '/static/images/avatar.jpg'
     }
 
@@ -63,16 +63,16 @@ function About({ title, description, image }) {
                             <strong>Hey, I'm Gabriel Gazal</strong>
                         </Paragraph>
                         <Paragraph>
-                            iOS developer passionate about developer experience and building
-                            apps that people love to use.
+                            A mechanical engineer who ended up loving coding more than building cars :P
                         </Paragraph>
                         <Paragraph>
-                            <strong>Currently:</strong> working on iOS projects and exploring
-                            new ways to improve app performance, usability, and accessibility.
+                            I'm an Apple Developer Academy alumni and I currently work as a Senior iOS Developer at{' '}
+                            <a href="https://grupoolx.com.br/" target="_blank" rel="noopener noreferrer">
+                                Grupo OLX.
+                            </a> Born and raised in <strong>Curitiba, Brazil.</strong> Where I live with my beautiful fiancée and our dog.
                         </Paragraph>
                         <Paragraph>
-                            <strong>Outside of coding:</strong> I enjoy running, watching
-                            movies, and experimenting with side projects.
+                            I love traveling, home automation, board games and CrossFit. When I'm not coding you can find me walking around the town with Joca 🐕
                         </Paragraph>
                     </DescriptionWrapper>
                 </IntroContainer>
@@ -145,7 +145,7 @@ const DescriptionWrapper = styled('div', {
 const Paragraph = styled('p', {
     margin: 0,
     lineHeight: 1.7,
-    fontSize: '16px',
+    fontSize: '17px',
     color: '$gray12',
 })
 
