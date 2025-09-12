@@ -29,7 +29,7 @@ export default function Footer() {
 }
 
 const Container = styled('footer', {
-  background: 'black',
+  background: '#08070b',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -37,7 +37,7 @@ const Container = styled('footer', {
 })
 
 const Icon = styled('i', {
-  color: '#000000',
+  color: '#08070b',
   marginLeft: '5px',
   fontSize: '16px',
   transition: 'color 200ms ease-in-out, transform 200ms ease-in-out',
