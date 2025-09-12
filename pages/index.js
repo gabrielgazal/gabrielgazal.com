@@ -13,7 +13,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Gabriel Gazal',
-      description: 'Obsessed with developer experience',
+      description: 'Obsessed with developing dreams',
       image: '/images/avatar.jpg',
     },
   }
