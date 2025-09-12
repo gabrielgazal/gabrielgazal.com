@@ -202,53 +202,7 @@ const categories = [
     //     ],
     // },
     // {
-    //     name: 'Recording',
-    //     items: [
-    //         {
-    //             title: 'Sony Alpha 7C',
-    //             description:
-    //                 'Awesome build quality and image. The flip-out LCD screen is super useful.',
-    //             url: 'https://amzn.to/2ZRB1rx',
-    //         },
-    //         {
-    //             title: 'Tamron 28-75mm Lens',
-    //             description:
-    //                 'The cheapest option I could find. No idea how these lenses work.',
-    //             url: 'https://amzn.to/3By5E21',
-    //         },
-    //         {
-    //             title: 'Elgato Camlink',
-    //             description:
-    //                 'This weird thing that allows you to use DSLR cameras as webcams.',
-    //             url: 'https://amzn.to/3bzME8Y',
-    //         },
-    //         {
-    //             title: 'Elgato Key Light',
-    //             description:
-    //                 "I keep this turned on, so people don't think I work from a dungeon.",
-    //             url: 'https://amzn.to/3CD0Euh',
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: 'Screenshare',
-    //     items: [
-    //         {
-    //             title: 'Screenflow',
-    //             description:
-    //                 'I hate editing videos. Screenflow makes it so much easier.',
-    //             url: 'https://www.telestream.net/screenflow/',
-    //         },
-    //         {
-    //             title: 'Mouseposé',
-    //             description:
-    //                 "Everybody asks me about this. It's a great way to highlight things.",
-    //             url: 'https://boinx.com/mousepose/',
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: 'Audio',
+    //     name: 'Miscellaneous',
     //     items: [
     //         {
     //             title: 'Blue Yeti X',
@@ -266,46 +220,6 @@ const categories = [
     //             description:
     //                 'By far the best headphones I ever had. Premium quality, solid build.',
     //             url: 'https://amzn.to/3gnkaSb',
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: 'Finance',
-    //     items: [
-    //         {
-    //             title: 'Betterment',
-    //             description:
-    //                 'My favorite investing platform, which consistently returns ~16% earnings.',
-    //             url: 'http://betterment.com/invite/zenorochabuenonetto',
-    //         },
-    //         {
-    //             title: 'Mint',
-    //             description:
-    //                 'All my accounts are connected in one place, so I can see a big picture of everything.',
-    //             url: 'https://mint.com',
-    //         },
-    //         {
-    //             title: 'Coinbase',
-    //             description:
-    //                 "I'm not obsessed with crypto, but I still have some small investments there. My portfolio is made of ETH, BTC, SOL, DOGE, and SHIB.",
-    //             url: 'https://coinbase.com/join/rocha_12',
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: 'Reading',
-    //     items: [
-    //         {
-    //             title: 'Kindle Oasis',
-    //             description:
-    //                 'I particularly like this device since it has built-in lights and physical buttons.',
-    //             url: 'https://amzn.to/3mAbMmm',
-    //         },
-    //         {
-    //             title: 'Audible',
-    //             description:
-    //                 'The perfect choice to listen to a book while running outside.',
-    //             url: 'https://www.audible.com/',
     //         },
     //     ],
     // },

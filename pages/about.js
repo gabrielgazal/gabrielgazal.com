@@ -3,7 +3,7 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { parseISO, format, intervalToDuration } from 'date-fns'
-import items from '../data/about'
+import { careerItems, educationItems, honorsItems } from '/data/about'
 import Base from '@/layouts/Base'
 
 export async function getStaticProps() {
@@ -11,7 +11,7 @@ export async function getStaticProps() {
         title: 'About | Gabriel Gazal',
         description:
             'Gabriel Gazal is an iOS developer.',
-        tagline: 'A little bit from my world',
+        tagline: 'A little bit from my life',
         image: '/static/images/avatar.jpg'
     }
 
@@ -79,7 +79,7 @@ function About({ title, description, image }) {
 
                 <SectionTitle>Career</SectionTitle>
                 <CareerSection>
-                    {items.map((item, index) => (
+                    {careerItems.map((item, index) => (
                         <CareerItem key={index}>
                             <h3>{item.jobTitle}</h3>
                             <p>
@@ -104,7 +104,50 @@ function About({ title, description, image }) {
                         </CareerItem>
                     ))}
                 </CareerSection>
-                {/* <SectionTitle>Education</SectionTitle> */} {/*TODO - Add this section*/}
+                <SectionTitle>Education</SectionTitle>
+                <EducationSection>
+                    {educationItems.map((item, index) => (
+                        <Educationtem key={index}>
+                            <h3>{item.degreeType} in {item.degreeArea}</h3>
+                            <p>
+                                <a
+                                    href={item.institutionUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {item.institution}
+                                </a>
+                            </p>
+                            <p>
+                                <span>{format(parseISO(item.startDate), 'LLL yyyy')}</span> –{' '}
+                                <span>
+                                    {item.endDate
+                                        ? format(parseISO(item.endDate), 'LLL yyyy')
+                                        : 'Present'}
+                                </span>{' '}
+                            </p>
+                        </Educationtem>
+                    ))}
+                </EducationSection>
+                <SectionTitle>Honors</SectionTitle>
+                <HonorsSection>
+                    {honorsItems.map((item, index) => (
+                        <HonorsItem key={index}>
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                            <p>
+                                <strong>Awarding institution:</strong>{' '}
+                                <a
+                                    href={item.institutionUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {item.institution}
+                                </a>
+                            </p>
+                        </HonorsItem>
+                    ))}
+                </HonorsSection>
             </Main>
         </>
     )
@@ -162,6 +205,58 @@ const CareerSection = styled('section', {
 })
 
 const CareerItem = styled('div', {
+    marginBottom: '40px',
+    '& h3': {
+        marginBottom: '4px',
+        fontSize: '18px',
+        fontWeight: '600',
+    },
+    '& p': {
+        margin: '4px 0',
+        lineHeight: 1.6,
+        fontSize: '15px',
+    },
+    '& a': {
+        color: '$primary',
+        textDecoration: 'none',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
+    },
+})
+
+const EducationSection = styled('section', {
+    width: '100%',
+    marginTop: '0px',
+})
+
+const Educationtem = styled('div', {
+    marginBottom: '40px',
+    '& h3': {
+        marginBottom: '4px',
+        fontSize: '18px',
+        fontWeight: '600',
+    },
+    '& p': {
+        margin: '4px 0',
+        lineHeight: 1.6,
+        fontSize: '15px',
+    },
+    '& a': {
+        color: '$primary',
+        textDecoration: 'none',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
+    },
+})
+
+const HonorsSection = styled('section', {
+    width: '100%',
+    marginTop: '0px',
+})
+
+const HonorsItem = styled('div', {
     marginBottom: '40px',
     '& h3': {
         marginBottom: '4px',
