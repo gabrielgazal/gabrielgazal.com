@@ -14,7 +14,7 @@ export async function getStaticProps() {
     props: {
       title: 'Gabriel Gazal',
       description: 'Obsessed with developing dreams',
-      image: '/images/avatar.jpg',
+      image: '/static/images/avatar.jpg',
     },
   }
 }
@@ -44,7 +44,7 @@ export default function Index({ title, description, image }) {
         <PostContent>
           <PostContainer>
             <div>
-              <h1>{title}</h1>
+              <SectionTitle>{title}</SectionTitle>
               <p>
                 <strong>
                   iOS Software Engineer at{' '}
@@ -71,4 +71,11 @@ const Home = styled(PostMain, {
   display: 'flex',
   margin: '0 auto',
   '@bp2': { width: 800 },
+})
+
+const SectionTitle = styled('h2', {
+  fontSize: '2rem',
+  fontWeight: 600,
+  color: 'white',
+  lineHeight: 1,
 })

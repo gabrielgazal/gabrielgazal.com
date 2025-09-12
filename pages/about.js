@@ -12,7 +12,7 @@ export async function getStaticProps() {
         description:
             'Gabriel Gazal is an iOS developer obsessed with developer experience.',
         tagline: 'Hey! This is me. ',
-        image: '/images/avatar.jpg'
+        image: '/static/images/avatar.jpg'
     }
 
     return { props: meta }
