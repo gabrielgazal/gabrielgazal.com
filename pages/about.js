@@ -8,7 +8,7 @@ import Base from '@/layouts/Base'
 
 export async function getStaticProps() {
     const meta = {
-        title: 'About',
+        title: 'About | Gabriel Gazal',
         description:
             'Gabriel Gazal is an iOS developer obsessed with developer experience.',
         tagline: 'Hey! This is me. ',
@@ -104,6 +104,7 @@ function About({ title, description, image }) {
                         </CareerItem>
                     ))}
                 </CareerSection>
+                {/* <SectionTitle>Education</SectionTitle> */} {/*TODO - Add this section*/}
             </Main>
         </>
     )
