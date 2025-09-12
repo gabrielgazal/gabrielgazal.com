@@ -24,6 +24,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "remixicon": "^4.6.0",
+    "resend": "^6.0.3",
     "string-strip-html": "^13.4.13",
     "styled-components": "^6.1.19"
   }
