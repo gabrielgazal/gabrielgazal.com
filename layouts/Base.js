@@ -15,8 +15,8 @@ export default function Base({ children }) {
                 css={{
                     '& ::selection': {
                         background: `$${primaryColor}`,
-                        color: '#000000ff',
-                        WebkitTextFillColor: 'black',
+                        color: '#0a0a0a',
+                        WebkitTextFillColor: '#0a0a0a',
                     },
                 }}
             >
