@@ -66,10 +66,10 @@ function About({ title, description, image }) {
                             A mechanical engineer who ended up loving coding more than building cars :P
                         </Paragraph>
                         <Paragraph>
-                            I'm an Apple Developer Academy alumni and I currently work as a Senior iOS Developer at{' '}
-                            <a href="https://grupoolx.com.br/" target="_blank" rel="noopener noreferrer">
-                                Grupo OLX.
-                            </a> Born and raised in <strong>Curitiba, Brazil</strong>, where I live with my beautiful fiancée and our dog.
+                            I'm an Apple Developer Academy alumni and I currently work as a Mobile Engineer at{' '}
+                            <a href="https://nubank.com.br/" target="_blank" rel="noopener noreferrer">
+                                Nubank.
+                            </a> Born and raised in <strong>Curitiba, Brazil</strong>. Currently living in Jundiaí with my beautiful fiancée and our dog.
                         </Paragraph>
                         <Paragraph>
                             I love traveling, home automation, board games and CrossFit. When I'm not coding you can find me walking around the town with Joca 🐕

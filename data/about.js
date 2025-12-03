@@ -1,9 +1,17 @@
 export const careerItems = [
     {
+        jobTitle: 'Mobile Engineer',
+        company: 'Nubank',
+        companyUrl: 'https://nubank.com.br/',
+        startDate: '2025-12-02',
+        location: 'Curitiba, Brazil',
+    },
+    {
         jobTitle: 'Senior iOS Engineer',
         company: 'OLX Group',
         companyUrl: 'https://grupoolx.com.br/',
         startDate: '2025-03-01',
+        endDate: '2025-12-01',
         location: 'Curitiba, Brazil',
     },
     {

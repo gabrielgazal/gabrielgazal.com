@@ -47,9 +47,9 @@ export default function Index({ title, description, image }) {
               <SectionTitle>{title}</SectionTitle>
               <p>
                 <strong>
-                  iOS Software Engineer at{' '}
-                  <a href="https://grupoolx.com.br/" target="_blank" rel="noopener noreferrer">
-                    Grupo OLX
+                  Mobile Engineer at{' '}
+                  <a href="https://nubank.com.br/" target="_blank" rel="noopener noreferrer">
+                    Nubank
                   </a>
                 </strong>
                 <br />
